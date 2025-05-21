@@ -1,4 +1,4 @@
-# Kanban Task Board Full-Stack aApp
+# Kanban Task Board Full-Stack App
 
 A Kanban-style task board with login, card saving, and light/dark mode toggle. This guide explains how to run the app with a local MongoDB database.
 

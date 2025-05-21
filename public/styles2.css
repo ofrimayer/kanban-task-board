@@ -1,0 +1,290 @@
+/* task 2.1 */
+:root {
+    /* box-sizing: border-box; */
+    font-family: Arial, sans-serif;
+    --background-light: #ffffff;
+    --background-dark: #202020;
+    --text-light: #000000;
+    --text-dark: #ffffff;
+    --card-light: #f0f0f0;
+    --card-dark: #303030;
+    --column-light: #f0f0f0;
+    --column-dark: #3e3e3e;
+    --column-dark2: #2c2c2c;
+}
+  
+/* task 2.2 */
+header {
+    background-color: #202020;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 5rem;
+    margin: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+  
+header h1 {
+    margin: 0;
+}
+
+/* task 2.3 */
+/* add card form */
+header form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+
+/* controls */
+header form input[type="text"] {
+    border: none;
+    height: 2rem; /* for consistent height */
+    width: 20em;
+  }
+  
+header form input[type="color"] {
+    border: none;
+    height: 2rem; /* for consistent height */
+    width: 8em;
+}
+
+/* add button */
+header form button {
+    background-color: lightgreen;
+    border: none;
+    height: 2rem; /* for consistent height */
+    padding: 0.25rem 1rem;
+}
+
+/* task 2.4 */
+/* board */
+#board {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5rem;
+    width: 100%;
+    margin: 0;
+    flex: 1;
+    overflow-x: hidden;
+  }
+  
+/* columns */
+.column {
+    flex: 1;
+    margin: 0 0.5rem;
+    /* task 2.7 */
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3rem; 
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#todo, #done {
+    background-color: #f0f0f0;
+}
+
+#doing {
+    background-color: white;
+}
+
+/* column titles */
+.columnTitle {
+    margin: 1rem 1rem 0 1rem;
+}
+
+/* task 2.5 */
+/* items inside of a column */
+.column > * {
+    width: 100%; 
+    margin-bottom: 1rem;
+}
+
+/* task 2.5 + 2.6 */
+/* cards */
+.card {
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-top: 0;
+    position: relative; /* makes the buttons actually show up */
+}
+
+.card:hover .buttons {
+    display: flex;
+}
+
+.buttons {
+    display: none; /* hiding buttons by default */
+    position: absolute; /* needed for intended placement */
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.buttons button {
+    margin: 0;
+}
+
+/* task 2.7 */
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+
+/* extra credit */
+.card.moving {
+    opacity: 0.5;
+  }
+
+
+.column.drag-over .placeholder {
+    display: block;
+    height: 2rem;
+    background-color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.placeholder {
+    display: none; /* hiding placeholder by default */
+}
+
+.card.dropped {
+    border: 2px solid black;
+}
+
+
+/* task 3 */
+/* light/dark toggle icon */
+#modeToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+#modeIcon {
+    width: 24px;
+    height: 24px;
+}
+
+/* light/dark style */
+body.light-mode {
+    background-color: var(--background-light);
+    color: var(--text-light);
+}
+
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+body.dark-mode #todo,
+body.dark-mode #done {
+    background-color: var(--column-dark);
+}
+
+
+body.dark-mode #doing {
+    background-color: var(--column-dark2);
+}
+
+.card {
+    background-color: var(--card-light);
+    color: var(--text-light);
+}
+
+.card.dark {
+    background-color: var(--card-dark);
+    color: var(--text-dark);
+}
+
+.buttons button img {
+    filter: invert(0);
+}
+
+.card.dark .buttons button img {
+    filter: invert(1);
+}
+
+#modeToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+#modeIcon {
+    width: 24px;
+    height: 24px;
+}
+
+/* small tablet (mini ipad) */
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        width: 100%;
+        transform: none;
+        max-width: none;
+    }
+
+    #board {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .column {
+        margin: 1rem 0;
+        flex: none;
+    }
+    
+}
+
+/* iPhone */
+@media (max-width: 480px) {
+    body {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header form {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 0.25rem;
+    }
+
+    header form input[type="text"],
+    header form input[type="color"],
+    header form button {
+        width: 100%;
+        max-width: 90%;
+    }
+
+
+    #board {
+        flex-direction: column;
+        padding: 0;
+    }
+}
+
+/* logout button */
+#logoutButton {
+    border: none;
+    cursor: pointer;
+    height: 2rem; /* for consistent height */
+    padding: 0.25rem 1rem;    
+    background-color: #3e3e3e;
+    color: #ffffff;
+    border-radius: 0.5rem;
+}
+
+#logoutButton:hover {
+    background-color: gray;
+}

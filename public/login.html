@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Task Board</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Task Board</h1>
+        <form action="/" method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <div class="remember-me">
+                <input type="checkbox" id="rememberMe" name="rememberMe">
+                <label for="rememberMe">Remember Me</label>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <div class="cookie-banner">
+        Privacy and Cookies policy. We use cookies to give you the best experience on our website. By continuing, you're agreeing to our use of cookies.
+        <button onclick="document.querySelector('.cookie-banner').style.display='none'">Accept and Continue</button>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('error')) {
+            alert("Invalid username or password.");
+            window.location.href = '/';
+        }
+    </script>
+</body>
+</html>

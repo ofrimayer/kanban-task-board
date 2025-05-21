@@ -1,0 +1,61 @@
+:root {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+.template, .hidden {
+  display: none;
+}
+
+/* part 4 */
+/* fonts for interactors */
+input, button, textarea {
+  font-size: 1rem; /* normal text size */
+  font-family: inherit;
+}
+
+/* card selected for moving */
+.moving {
+  border: 2px solid black;
+}
+
+/* editDescription text box */
+.editDescription {
+  width: 100%; /* full width of the page */
+  height: 5rem; /* 5 times the font size */
+  /* note: this is hardcoded height, can use a function to make it adjust to any chosen font size. */
+  background-color: inherit; /* card's background */
+}
+
+/* whitespace in descriptions */
+.description {
+  white-space: pre-wrap;
+}
+
+/* card buttons */
+.card button {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+/* move here buttons */
+.moveHere {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: small;
+  color: gray;
+}
+
+.moveHere:hover {
+  background-color: #e0e0e0;
+  color: black;
+}

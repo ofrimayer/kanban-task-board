@@ -1,0 +1,82 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+}
+
+.container {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: #f0f0f0;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #b1b1b1;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #0160c6;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00438a;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    animation: slideInRotate 0.5s forwards;
+}
+
+.cookie-banner button {
+    background-color: #28a745;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.cookie-banner button:hover {
+    background-color: #1d7e33;
+}
+
+@keyframes slideInRotate {
+    from {
+        transform: translateY(100%) rotate(-10deg);
+    }
+    to {
+        transform: translateY(0) rotate(0deg);
+    }
+}

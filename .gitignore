@@ -1,0 +1,36 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+
+# MongoDB dumps
+dump/
+
+# Compiled files / backups (general)
+*.log
+*.tmp
+*.bak
+
+# Build artifacts (if added later)
+dist/
+build/
+
+# Example files and metadata
+example.js
+metadata.yml
+
+# Lint configs (optional — if used only locally)
+eslint.config.js

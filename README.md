@@ -69,7 +69,15 @@ A Kanban-style task board with login, card saving, and light/dark mode toggle. T
   brew services start mongodb-community@7.0
   ```
 
-## 🛠 Setup Steps
+## ✅ Deployed Demo
+You can try the app live **[here.](https://kanban-task-board.onrender.com/)**
+Use the following credentials to log in:
+>
+> * **Username:** `ofri`
+> * **Password:** `ofri`
+
+
+## 🛠 Local Setup Guide
 
 ### 1. Clone or unzip the project
 ```bash
